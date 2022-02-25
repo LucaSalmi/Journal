@@ -21,7 +21,9 @@ struct ContentView: View {
                     NavigationLink(destination: JournalEntryView(entry: entry)) {
                         Text(entry.content)
                     }
-                }
+                }.onDelete(perform: { IndexSet in
+                    journal.entries.remove(atOffsets: IndexSet)
+                })
             }
             
             .navigationTitle("Journal")

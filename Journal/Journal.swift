@@ -19,7 +19,14 @@ class Journal : ObservableObject{
         }else {
             return
         }
+    }
+    
+    func update(entry: JournalEntry, with content: String?){
         
+        if let index = entries.firstIndex(of: entry), let newContent = content{
+            
+            entries[index].content = newContent
+        }
     }
     
     func addMOckData(){

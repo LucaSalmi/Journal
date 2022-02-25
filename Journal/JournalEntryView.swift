@@ -13,6 +13,7 @@ struct JournalEntryView: View {
     let defaultText = "Today I...."
     
     @EnvironmentObject var journal: Journal
+    @Environment(\.presentationMode) var presentationMode
     @State var content: String = ""
     
     var body: some View {
@@ -20,6 +21,9 @@ struct JournalEntryView: View {
         VStack{
             
             TextEditor(text: $content)
+                .onTapGesture {
+                    clearText()
+                }
             
             //  if let entry = entry{
             //
@@ -29,7 +33,10 @@ struct JournalEntryView: View {
             //  Text("Write something....")
             //  }
             
-        }.navigationBarItems(trailing: Button(action: { saveEntry() }, label: { Text("Save") }))
+        }.navigationBarItems(trailing: Button(action: {
+            saveEntry()
+            presentationMode.wrappedValue.dismiss()
+        }, label: { Text("Save") }))
             .onAppear(perform: setContent)
     }
     
@@ -47,11 +54,26 @@ struct JournalEntryView: View {
         }
     }
     
+    func clearText(){
+        
+        if entry == nil{
+            content = ""
+        }
+        
+    }
+    
     func saveEntry(){
         
-        let newEntry = JournalEntry(content: content)
-        journal.entries.append(newEntry)
-        print("saved")
+        if let entry = entry{
+            
+            journal.update(entry: entry, with: content)
+            
+            
+        }else{
+            
+            let newEntry = JournalEntry(content: content)
+            journal.entries.append(newEntry)
+        }
     }
 }
 
