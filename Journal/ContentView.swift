@@ -14,24 +14,21 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView{
-                
-        List(){
             
-            ForEach(journal.entries){entry in
-                NavigationLink(destination: JournalEntryView(entry: entry)) {
-                    Text(entry.content)
+            List(){
+                
+                ForEach(journal.entries){entry in
+                    NavigationLink(destination: JournalEntryView(entry: entry)) {
+                        Text(entry.content)
+                    }
                 }
-                
             }
-        }
             
-                .navigationTitle("Journal")
-                .navigationBarItems(trailing: NavigationLink(destination: JournalEntryView(), label: {Image(systemName: "plus.circle")}))
+            .navigationTitle("Journal")
+            .navigationBarItems(trailing: NavigationLink(destination: JournalEntryView(), label: {Image(systemName: "plus.circle")}))
+            
+        }.environmentObject(journal)
     }
-        
-}
-    
-
 }
 
 struct ContentView_Previews: PreviewProvider {
