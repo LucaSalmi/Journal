@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var entries = [JournalEntry]()
+    @StateObject var journal = Journal()
     
     var body: some View {
         
@@ -17,36 +17,21 @@ struct ContentView: View {
                 
         List(){
             
-            ForEach(entries){entry in
-                Text(entry.content)
+            ForEach(journal.entries){entry in
+                NavigationLink(destination: JournalEntryView(entry: entry)) {
+                    Text(entry.content)
+                }
+                
             }
-        }.onAppear(perform: checkIfEmpty)
+        }
             
                 .navigationTitle("Journal")
-                .navigationBarItems(trailing: NavigationLink(destination: EmptyView(), label: {Image(systemName: "plus.circle")}))
+                .navigationBarItems(trailing: NavigationLink(destination: JournalEntryView(), label: {Image(systemName: "plus.circle")}))
     }
         
 }
     
-    func checkIfEmpty(){
-        
-        if entries.count < 1{
-            addMOckData()
-        }else {
-            return
-        }
-        
-    }
-    
-    func addMOckData(){
-        
-        entries.append(JournalEntry(content: "Dag 1"))
-        entries.append(JournalEntry(content: "Dag 2"))
-        entries.append(JournalEntry(content: "Dag 3"))
-        entries.append(JournalEntry(content: "Dag 4"))
-        entries.append(JournalEntry(content: "Dag 5"))
-        entries.append(JournalEntry(content: "Dag 6"))
-    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

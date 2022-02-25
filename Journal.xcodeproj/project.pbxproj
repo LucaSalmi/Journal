@@ -15,6 +15,8 @@
 		C8E0655D27C8C18100DC7226 /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0655C27C8C18100DC7226 /* JournalUITests.swift */; };
 		C8E0655F27C8C18100DC7226 /* JournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0655E27C8C18100DC7226 /* JournalUITestsLaunchTests.swift */; };
 		C8E0656C27C8C26800DC7226 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0656B27C8C26800DC7226 /* JournalEntry.swift */; };
+		C8E0656E27C8CD0700DC7226 /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0656D27C8CD0700DC7226 /* JournalEntryView.swift */; };
+		C8E0657027C8CF6700DC7226 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0656F27C8CF6700DC7226 /* Journal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		C8E0655C27C8C18100DC7226 /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		C8E0655E27C8C18100DC7226 /* JournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C8E0656B27C8C26800DC7226 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		C8E0656D27C8CD0700DC7226 /* JournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
+		C8E0656F27C8CF6700DC7226 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			children = (
 				C8E0654127C8C18000DC7226 /* JournalApp.swift */,
 				C8E0654327C8C18000DC7226 /* ContentView.swift */,
+				C8E0656F27C8CF6700DC7226 /* Journal.swift */,
+				C8E0656D27C8CD0700DC7226 /* JournalEntryView.swift */,
 				C8E0656B27C8C26800DC7226 /* JournalEntry.swift */,
 				C8E0654527C8C18000DC7226 /* Assets.xcassets */,
 				C8E0654727C8C18000DC7226 /* Preview Content */,
@@ -261,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E0656C27C8C26800DC7226 /* JournalEntry.swift in Sources */,
+				C8E0657027C8CF6700DC7226 /* Journal.swift in Sources */,
+				C8E0656E27C8CD0700DC7226 /* JournalEntryView.swift in Sources */,
 				C8E0654427C8C18000DC7226 /* ContentView.swift in Sources */,
 				C8E0654227C8C18000DC7226 /* JournalApp.swift in Sources */,
 			);
